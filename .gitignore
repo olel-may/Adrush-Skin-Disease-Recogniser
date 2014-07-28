@@ -5,11 +5,8 @@ dataModelsForImageStorage.pyc
 project.py~
 project.pyc
 
-ImageProcessor/ClassifierModule.py~
-ImageProcessor/ClassifierModule.pyc
+ImageProcessor/ClassifyImages.py~
+ImageProcessor/ClassifyImages.pyc
 
-ImageProcessor/HistogramViewClass.py~
-ImageProcessor/HistogramViewClass.pyc
-
-ImageProcessor/ImageFilterClass.py~
-ImageProcessor/ImageFilterClass.pyc
+ImageProcessor/ImageFilter.py~
+ImageProcessor/ImageFilter.pyc
