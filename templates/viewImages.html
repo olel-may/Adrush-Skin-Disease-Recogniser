@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content%}
+    <div class="panel">
+        <div class="panel-body">
+        <h2 class="m-b-20">List of Successful Diagnosis Tests</h2>
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Uploaded Image</th>
+                    <th>Patient Age</th>
+                    <th>Patient Location</th>
+                    <th style="width:30%;">Skin Condition Description</th>
+                    <th>Report</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for image in images %}
+                <tr>
+                    <td><img src="/skinImages/{{ image.skinImageId }}/{{ image.skinImageName }}" width="100" height="100"></td>
+                    <td>{{ image.patientAge }}</td>
+                    <td>{{ image.patientLocation }}</td>
+                    <td>{{ image.skinConditionDescription }}</td>
+                    <td><a href="/diagnose/{{ image.skinImageId }}" class="btn btn-default btn-blue">View Report</a></td>
+                </tr>
+                {% end %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+{% end %}

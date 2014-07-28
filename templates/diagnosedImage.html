@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block content%}
+ <section class="m-t-10">
+ <div class="panel">
+   <div class="row image-diagnosis-results">
+    <div class="col-md-8 col-md-offset-2 p-t-20">
+        <div class="message alert alert-success">
+            <strong> {{ message }} </strong>
+        </div>
+        <div class="image-diagnosis-info">
+            <div class="row m-b-20">
+               <img width="200" height="200" src="/skinImages/{{ imageInfo.skinImageName }}"/>
+               <label style="width:100%; margin-top:10px;">Diagnosed Image:</label> 
+            </div>
+            <div class="image col-md-6"></div>
+            <div class="details col-md-6">
+                <div class="row m-b-20">
+                    <label>Patient Age:</label> {{ imageInfo.patientAge }}
+                </div>
+                <div class="row m-b-20" >
+                    <label>Patient Location</label> {{ imageInfo.patientLocation }}
+                </div>
+                <div class="row">
+                    <label>Condition Description:</label> {{ imageInfo.skinConditionDescription }}
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+</div>
+</section>
+{% end %}
+
+
+{% extends "layout.html" %}
+{% block content %}
+     <section>
+        <div class="">
+            <div class="row">
+            <div class="col-md-5">
+                <h2 class="alert alert-success">{{ message }}</h2>
+                <p>Let's hope that you had a wonderful experience using adrush image diagnosis system! We meet next time!</p>
+                <figure><img src='{{ static_url("images/doctor.png") }}' alt="image" title="Doctor" class="img-responsive"></figure>
+            </div>
+            <div class="col-md-7">
+               <div class="diagnose m-b-20">
+               <div class="col-md-6">
+                <div class="row m-b-20">
+                   <img width="200" height="200" src="/skinImages/{{ imageInfo.skinImageId }}/{{ imageInfo.skinImageName }}"/>
+                   <label style="width:100%; margin-top:10px;">Diagnosed Image:</label> 
+                </div>
+               </div>
+               <div class="col-md-6">
+                   <div class="row m-b-20">
+                    <label style="width:100%">Patient Age:</label> {{ imageInfo.patientAge }}
+                </div>
+                <div class="row m-b-20" >
+                    <label style="width:100%">Patient Location</label> {{ imageInfo.patientLocation }}
+                </div>
+                <div class="row">
+                    <label style="width:100%">Condition Description:</label> {{ imageInfo.skinConditionDescription }}
+                </div> 
+               </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </section>
+{% end %}
+

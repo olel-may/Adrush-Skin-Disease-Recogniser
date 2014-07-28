@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+     <section>
+        <div class="">
+            <div class="row">
+            <div class="col-md-5">
+                <h2>New Visitors: Welcome!</h2>
+                <p>Thank you for visiting the Adrush diagnosis system! As you explore the site, you can complete the fields in the form on the right of this page to get your image diagnosed!</p>
+            	<figure><img src='{{ static_url("images/doctor.png") }}' alt="image" title="Doctor" class="img-responsive lady1"></figure>
+            </div>
+            <div class="col-md-7">
+                <h1 class="m-b-20">Upload your image...</h1>
+                <div class="appointment-form clearfix">
+                    {% if len(message) > 1 %}
+                    <div class="message alert alert-success">
+                       {{ message }}
+                   </div>
+                    {% end %}
+                    <form name="appoint_form" id="appoint_form" action="/" method="POST" enctype="MULTIPART/FORM-DATA">
+                        <div class="row m-b-10">
+                           <div class="col-md-4"><label>Patient's Age:</label></div>
+                           <div class="col-md-8"><input type="text"  class="form-control" name="patient_age" id="patient_age"  placeholder="Patient's Age"/></div>                        
+                        </div>
+                        <div class="row m-b-10">
+                           <div class="col-md-4"><label>Area of Residence:</label></div>
+                           <div class="col-md-8"><input type="text" class="form-control" name="patient_location" id="patient_location" placeholder="Area of Residence"></div>
+                        </div>
+                        <div class="row m-b-10">
+                            <div class="col-md-4"><label>Diagnosis Image: </label></div>
+                            <div class="col-md-8"> 
+                                <div id="thumbnail">
+                                    <img src='{{ static_url("images/placehold.gif") }}' />
+                                </div>
+                                <input type="file" style="display: none;" id="upload-image" name="skin_image"  class="required" />
+                                <div id="upload" class="drop-area">
+                                    <span class="uploadfile">Upload File</span>
+                                    <p class="help-block">
+                                        Files must be less than <span>8 MB</span><br/>
+                                        Allowed file types: <span>png gif jpg jpeg</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-b-10">
+                            <div class="col-md-4"><label>Skin Condition Description: </label></div>
+                            <div class="col-md-8"><textarea class="form-control" rows="5" cols="30" name="condition_description" id="condition_description" required="required"></textarea></div>   
+                        </div>
+                        <div class="row text-center">
+                            <input type="submit" value="Submit" class="btn btn-default btn-rounded btn-blue">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </section>
+{% end %}
